@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <div class="container">
+    <div id="scene">
+      <div class="layer L1" data-depth="0.1">My first Layer!</div>
+      <div class="layer L2" data-depth="0.3">My second Layer!</div>
+      <div class="layer L3" data-depth="1.7">My third Layer!</div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/parallax/3.1.0/parallax.min.js"></script>
+  <script>
+    const scene = document.getElementById('scene');
+    const parallaxInstance = new Parallax(scene);
+  </script>
+  <style>
+    * {
+      box-sizing: border-box;
+      padding: 0;
+      margin: 0 auto;
+    }
+    .container {
+      position: relative;
+      height: 100vh;
+      width: 100vw;
+      overflow: hidden;
+      background-color: rgb(162, 126, 162);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+    }
+    #scene {
+      position: absolute;
+      left: -20%;
+      top: -20%;
+      height: 150vh;
+      width: 150vw;
+      /* height: 100vh;
+      width: 100vw; */
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+    /* .layer {
+      height: 100%;
+      width: 100%;
+    } */
+    .L1 {
+      background: url('./bg.jpg');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+      height: 150vh;
+      width: 150vw;
+      z-index: 1 !important;
+    }
+    .L2 {
+      background: url('./dudes.png');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 10% !important;
+      top: 50% !important;
+      height: 60vh;
+      width: 70vw;
+      z-index: 2 !important;
+    }
+    .L3 {
+      background: url('./ball.png');
+      background-position: center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      left: 40% !important;
+      top: 20% !important;
+      height: 70vh;
+      width: 70vw;
+      z-index: 3 !important;
+    }
+  </style>
+</body>
+</html>
